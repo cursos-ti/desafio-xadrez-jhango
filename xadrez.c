@@ -6,7 +6,7 @@
 
 int main() {
     
-    int bispo = 1, torre = 1, rainha; //Declaração das variáveis utilizada para contagem da movimentação de cada peça
+    int bispo = 1, torre = 1, rainha, cavalo; //Declaração das variáveis utilizada para contagem da movimentação de cada peça
 
     //Movimentação do Bispo utilizando While
     printf(" <><><> MOVIMENTAÇÃO DO BISPO <><><>\n");
@@ -30,6 +30,23 @@ int main() {
     for (rainha = 1; rainha<=8; rainha++){
 
         printf("Esquerda\n");
+    }
+
+    //Movimentação do Cavalo
+    printf(")()()( MOVIMENTAÇÃO DO CAVALO )()()(\n");
+    for (cavalo = 0; cavalo < 1; cavalo++){
+
+        int cavalo2 = 0;
+
+        while (cavalo2 < 2){
+
+            printf("Baixo \n");
+            cavalo2++;
+
+        }
+
+        printf("Esquerda \n");
+
     }
 
     return 0;
