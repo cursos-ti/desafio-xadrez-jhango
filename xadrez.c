@@ -4,35 +4,48 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
-int main() {
-    
-    int bispo = 1, torre = 1, rainha, cavalo; //Declaração das variáveis utilizada para contagem da movimentação de cada peça
-
-    //Movimentação do Bispo utilizando While
-    printf(" <><><> MOVIMENTAÇÃO DO BISPO <><><>\n");
-    while (bispo <=5 ){ 
+// Procedimento para a movimentação do bispo
+void bispo (int casas){
+    if (casas > 0){
         printf("Cima\n");
         printf("Direita\n");
-        bispo++;
+        bispo(casas -1); // Chamando o procedimento do movimento do bispo com -1 para continuar imprimindo movimentos até 0
     }
+}
 
-    //Movimentação da Torre utilizando DO-While
-    printf("[][][] MOVIMENTAÇÃO DA TORRE [][][]\n");
-    do{
-
+// Procedimento para a movimentação da torre
+void torre (int casas){
+    if (casas > 0){
         printf("Direita\n");
-        torre++;
-
-    }while (torre <=5);
-
-    //Movimentação da Rainha utilizando For
-    printf("{}{}{} MOVIMENTAÇÃO DA RAINHA {}{}{}\n");
-    for (rainha = 1; rainha<=8; rainha++){
-
-        printf("Esquerda\n");
+        torre(casas -1); // Chamando o procedimento do movimento da torre com -1 para continuar imprimindo movimentos até 0
     }
+}
 
-    //Movimentação do Cavalo
+// Procedimento para a movimentação da rainha
+void rainha (int casas){
+    if (casas > 0){
+        printf("Esquerda\n");
+        rainha(casas -1); // Chamando o procedimento do movimento da rainha com -1 para continuar imprimindo movimentos até 0
+    }
+}
+
+int main() {
+    
+    int bispocasas = 5, torrecasas = 5, rainhacasas = 8, cavalo; //Declaração das variáveis utilizada para contagem da movimentação de cada peça
+
+    //Movimentação do Bispo utilizando recursividade
+    printf(" <><><> MOVIMENTAÇÃO DO BISPO <><><>\n");
+    bispo(bispocasas);
+
+    //Movimentação da Torre utilizando recursividade
+    printf("[][][] MOVIMENTAÇÃO DA TORRE [][][]\n");
+    torre(torrecasas);
+
+    //Movimentação da Rainha utilizando recursividade
+    printf("{}{}{} MOVIMENTAÇÃO DA RAINHA {}{}{}\n");
+    rainha(rainhacasas);
+
+    //Movimentação do Cavalo utilizando for e while
     printf(")()()( MOVIMENTAÇÃO DO CAVALO )()()(\n");
     for (cavalo = 0; cavalo < 1; cavalo++){
 
